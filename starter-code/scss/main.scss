@@ -1,0 +1,107 @@
+@import 'animations', 'mixins', 'reset'; 
+
+body{
+    width: 60%;
+    margin: auto;
+    padding: 5% 0;
+    color: $grey_lightmode;
+    background-color:$veryLightGrey_lightmode;
+}
+
+header{
+    color: $darkGrey_lightmode;
+    display: flex;
+    justify-content: space-between;
+    & .mode{
+        display: flex;
+        align-items: center;
+        color: $darkGrey_lightmode;
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
+        font-size: 0.8em;
+    }
+}
+
+#search-form{
+    display: flex;
+    justify-content: stretch;
+    align-content: stretch;
+    padding: 3% 3%; 
+    margin: 3% 0;
+    @include box-setup;
+
+    & label {
+        margin: 0 3%;
+        cursor: pointer;
+    }
+    & input {
+        width:50%;   
+        flex:2;
+    }
+    & .no-result{
+        width:10%;
+    }
+}
+
+
+main{
+    background-color: green;
+    height: 60vh;
+    display: flex;
+    justify-content: stretch;
+    @include box-setup;
+    overflow: hidden;
+}
+
+aside{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width : 25%;
+    & img{
+        width:80%;
+        margin-top: 12%;
+        background-color: red;
+        clip-path: circle(50% at 50% 50%);
+    }
+}
+
+section {
+    flex:2;
+    margin :4% 3%;
+
+    & .namesDate-wrapper{
+    display: flex;
+    justify-content: space-between;
+    }
+
+    & .bio{
+        margin: 3% 0;
+        height: 17%;
+        overflow: scroll;
+    }
+
+    & .stats{
+        display: flex;
+        justify-content: space-between;
+        padding: 3% 10%;
+        background-color: $veryLightGrey_lightmode;
+        border-radius: 10px;
+    }
+
+    & .links{
+        margin-top: 3%;
+        display: flex;
+        justify-content: flex-start;
+        gap:30%;
+
+    
+        & .links-firstLine, .links-secondLine{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100px;
+        }
+
+    }
+}

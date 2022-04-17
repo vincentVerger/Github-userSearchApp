@@ -1,0 +1,49 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family : 'Space Mono', monospace, sans-serif;
+}
+
+html {
+    height: 100vh;
+    font-size: 15px;
+    
+}
+
+/* COLORS */
+
+$blue: #0079FF;
+
+$grey_lightmode :#697C9A;
+$veryLightGrey_lightmode :#F6F8FF;
+$darkGrey_lightmode :#2B3442;
+$greyBlue_lightmode :#4B6A9B;
+$white_lightmode :#FEFEFE;
+
+$white_darkmode : white;
+$darkBlue_darkmode: #1E2A47;
+$veryDarkBlue_darkmode :#141D2F;
+
+
+/* DEVICES */
+
+@mixin wide-screen {
+    @media screen and (min-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 400px) and (max-width: 1200px) {
+        @content;
+    }
+}

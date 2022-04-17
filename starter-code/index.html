@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | GitHub user search app</title>
+</head>
+<body>
+
+
+  <header>
+      <h1>devfinder</h1>
+      <div class="mode"><span>dark</span><img src=assets/icon-moon.svg alt="moon"/></div>
+  </header>
+
+
+  <form action="" name="search-form" id="search-form">
+
+        <label for="user-name"><img src="/assets/icon-search.svg" alt="search"/></label>
+        <input type="text" name="user-name" id="user-name" placeholder="Search GitHub username...">
+        <div class="no-result"></div>
+        <input type="submit" value="Search" name="submit">
+  </form>
+
+  <main>
+
+    <aside class="picture"><img src="/assets/favicon-32x32.png" alt="profile picture"/></aside>
+
+    <section class="infos">
+      
+      <div class="namesDate-wrapper">
+        <div class="different-names"><h2>The Octocat</h2><h3>@octocat</h3></div>
+        <div class="date">joined 15 janv 1985</div>
+      </div>
+
+      <p class="bio">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electroni</p>
+      
+      <div class="stats">
+          <div class="repos"><h4>Repos</h4></div>
+          <div class="followers"><h4>Followers</h4></div>
+          <div class="following"><h4>Following</h4></div>
+      </div>
+
+      <div class="links">
+        <div class="links-firstLine">
+          <div class="location"><img src="/assets/icon-location.svg" alt="location"/>San Fransisco </div>
+          <div class="link"><img src="/assets/icon-website.svg" alt="website"/>My website </div>
+          
+        </div>
+        <div class="links-secondLine">
+          <div class="twitter"><img src="/assets/icon-twitter.svg" alt="twitter"/>Not available </div>
+          <div class="company"><img src="/assets/icon-company.svg" alt="company"/>@github </div>
+        </div>
+      </div>
+      
+    </section> 
+
+  </main>
+
+</body>
+<script src="/js/api.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/behaviour.js"></script>
+<script src="/js/components.js"></script>
+</html>
