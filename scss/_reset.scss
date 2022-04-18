@@ -8,6 +8,7 @@
 }
 
 html {
+    
     height: 100vh;
     font-size: 15px;
     
@@ -26,6 +27,11 @@ $white_lightmode :#FEFEFE;
 $white_darkmode : white;
 $darkBlue_darkmode: #1E2A47;
 $veryDarkBlue_darkmode :#141D2F;
+
+:root{
+--veryLightGrey_lightmode:#F6F8FF;
+--grey_lightmode :#697C9A;
+}
 
 
 /* DEVICES */

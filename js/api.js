@@ -29,7 +29,7 @@ class EchoApi extends Api {
     }
 
     async getInfos() {
-        return await this.get()
+       return await this.get()  ;
     }
 }
 

@@ -1,12 +1,17 @@
-@import 'mixins', 'reset'; 
+@import  'reset','mixins'; 
+
+.day-night{
+    transition :  1s;
+}
 
 body{
     width: 60%;
     margin: auto;
     padding: 5% 0;
-    color: $grey_lightmode;
-    background-color:$veryLightGrey_lightmode;
+    color: var(--grey_lightmode);
+    background-color:var(--veryLightGrey_lightmode); 
 }
+
 
 header{
     color: $darkGrey_lightmode;
@@ -15,11 +20,11 @@ header{
     & .mode{
         display: flex;
         align-items: center;
-        color: $darkGrey_lightmode;
         text-transform: uppercase;
         letter-spacing: 0.5em;
         font-size: 0.8em;
     }
+    
 }
 
 #search-form{
@@ -39,7 +44,9 @@ header{
         flex:2;
     }
     & .no-result{
-        width:10%;
+        width:14%;
+        color: red;
+        margin :0 2%;
     }
 }
 
@@ -61,7 +68,6 @@ aside{
     & img{
         width:80%;
         margin-top: 12%;
-        background-color: red;
         clip-path: circle(50% at 50% 50%);
     }
 }
@@ -93,14 +99,23 @@ section {
         margin-top: 3%;
         display: flex;
         justify-content: flex-start;
-        gap:30%;
+        gap:25%;
 
     
         & .links-firstLine, .links-secondLine{
             display: flex;
             flex-direction: column;
             justify-content: space-around;
+            width:30%;
             height: 100px;
+        }
+
+        & a, .location {
+            display: flex;
+            align-items: center;
+            gap: 5%;
+            text-decoration: none;
+            color: $grey_lightmode;
         }
 
     }
