@@ -23,15 +23,24 @@ class App{
             this.toggleDayNight.addEventListener('click',function(e){
             
             if(sessionStorage.mode==='dark'){
-            document.documentElement.style.setProperty('--veryLightGrey_lightmode','red');
-            document.documentElement.style.setProperty('--grey_lightmode','green');
+            document.documentElement.style.setProperty('--veryLightGrey_lightmode','#F6F8FF');
+            document.documentElement.style.setProperty('--grey_lightmode','#697C9A');
+            document.documentElement.style.setProperty('--white_lightmode','#FEFEFE');
+            document.documentElement.style.setProperty('--darkGrey_lightmode','#2B3442');
+            document.querySelector('.moon-sun').classList.replace('sun','moon');
+            document.querySelector('.mode span').innerText ='DARK';
             sessionStorage.setItem('mode','light');
             }
             else{
-            document.documentElement.style.setProperty('--veryLightGrey_lightmode','#F6F8FF');
-            document.documentElement.style.setProperty('--grey_lightmode','#697C9A');
+            document.documentElement.style.setProperty('--veryLightGrey_lightmode','#141D2F');
+            document.documentElement.style.setProperty('--grey_lightmode','#FFFFFF');
+            document.documentElement.style.setProperty('--white_lightmode','#1E2A47');
+            document.documentElement.style.setProperty('--darkGrey_lightmode','#FFFFFF');
+            document.querySelector('.moon-sun').classList.replace('moon','sun');
+            document.querySelector('.mode span').innerText ='LIGHT';
             sessionStorage.setItem('mode','dark');
             }
+            
             })
 
 
@@ -58,6 +67,7 @@ else{
 }
 app.main();
 app.dayNight();
+console.log(sessionStorage)
 
 
 

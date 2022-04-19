@@ -16,30 +16,31 @@ html {
 :root {
   --veryLightGrey_lightmode:#F6F8FF;
   --grey_lightmode:#697C9A;
+  --white_lightmode:#FEFEFE;
+  --darkGrey_lightmode:#2B3442;
 }
 
 /* DEVICES */
-.day-night {
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
 body {
-  width: 60%;
+  width: 50%;
   margin: auto;
   padding: 5% 0;
   color: var(--grey_lightmode);
+  -webkit-transition: 1s;
+  transition: 1s;
   background-color: var(--veryLightGrey_lightmode);
 }
 
 header {
-  color: #2B3442;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: var(--darkGrey_lightmode);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 header .mode {
@@ -50,8 +51,26 @@ header .mode {
       -ms-flex-align: center;
           align-items: center;
   text-transform: uppercase;
-  letter-spacing: 0.5em;
+  color: var(--darkGrey_lightmode);
+  letter-spacing: 0.3em;
   font-size: 0.8em;
+  cursor: pointer;
+}
+
+header .moon-sun {
+  width: 20px;
+  height: 20px;
+  background-color: var(--darkGrey_lightmode);
+}
+
+header .moon {
+  -webkit-mask: url("/assets/icon-moon.svg");
+          mask: url("/assets/icon-moon.svg");
+}
+
+header .sun {
+  -webkit-mask: url("/assets/icon-sun.svg");
+          mask: url("/assets/icon-sun.svg");
 }
 
 #search-form {
@@ -61,19 +80,23 @@ header .mode {
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  padding: 3% 3%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1% 1%;
   margin: 3% 0;
   border-radius: 15px;
   -webkit-box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
-  background-color: #FEFEFE;
+  background-color: var(--white_lightmode);
 }
 
 #search-form label {
   margin: 0 3%;
   cursor: pointer;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #search-form input {
@@ -81,16 +104,36 @@ header .mode {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
+  border: none;
+  outline: none;
+  background-color: var(--white_lightmode);
+  caret-color: #0079FF;
 }
 
 #search-form .no-result {
   width: 14%;
   color: red;
+  font-weight: bold;
   margin: 0 2%;
 }
 
+#search-form .submit-btn {
+  color: white;
+  background-color: #0079FF;
+  border: none;
+  border-radius: 10px;
+  padding: 2% 4%;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+#search-form .submit-btn:hover {
+  opacity: 0.6;
+}
+
 main {
-  background-color: green;
   height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,8 +144,12 @@ main {
   border-radius: 15px;
   -webkit-box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
-  background-color: #FEFEFE;
+  background-color: var(--white_lightmode);
   overflow: hidden;
+}
+
+main h3 {
+  color: #0079FF;
 }
 
 aside {
@@ -115,12 +162,13 @@ aside {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 25%;
+  width: 30%;
 }
 
 aside img {
-  width: 80%;
+  width: 140px;
   margin-top: 12%;
+  margin: 12% 0 0 12%;
   -webkit-clip-path: circle(50% at 50% 50%);
           clip-path: circle(50% at 50% 50%);
 }
@@ -129,7 +177,7 @@ section {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
-  margin: 4% 3%;
+  margin: 4% 12% 4% 0%;
 }
 
 section .namesDate-wrapper {
@@ -195,3 +243,4 @@ section .links a, section .links .location {
   text-decoration: none;
   color: #697C9A;
 }
+/*# sourceMappingURL=main.css.map */

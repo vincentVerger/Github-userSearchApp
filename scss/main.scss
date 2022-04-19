@@ -1,28 +1,42 @@
 @import  'reset','mixins'; 
 
-.day-night{
-    transition :  1s;
-}
 
 body{
-    width: 60%;
+    width: 50%;
     margin: auto;
     padding: 5% 0;
     color: var(--grey_lightmode);
+    transition: 1s;
     background-color:var(--veryLightGrey_lightmode); 
 }
 
 
 header{
-    color: $darkGrey_lightmode;
+    //fill: var(--veryLightGrey_lightmode);
     display: flex;
+    color : var(--darkGrey_lightmode);
     justify-content: space-between;
+    transition: 1s;
     & .mode{
         display: flex;
         align-items: center;
         text-transform: uppercase;
-        letter-spacing: 0.5em;
+        color : var(--darkGrey_lightmode);
+        letter-spacing: 0.3em;
         font-size: 0.8em;
+        cursor: pointer;
+    }
+
+    & .moon-sun{
+        width: 20px;
+        height: 20px;
+        background-color: var(--darkGrey_lightmode);
+    }
+    & .moon{
+        mask: url('/assets/icon-moon.svg');
+    }
+    & .sun{
+            mask: url('/assets/icon-sun.svg');   
     }
     
 }
@@ -30,51 +44,79 @@ header{
 #search-form{
     display: flex;
     justify-content: stretch;
-    align-content: stretch;
-    padding: 3% 3%; 
+    align-items: center;
+    padding: 1% 1%; 
     margin: 3% 0;
+    
     @include box-setup;
 
     & label {
         margin: 0 3%;
         cursor: pointer;
+        align-self: center;
+
     }
     & input {
         width:50%;   
         flex:2;
+        border:none;
+        outline:none;
+        background-color:var(--white_lightmode) ;
+        caret-color:  $blue ;
+    
     }
     & .no-result{
         width:14%;
         color: red;
+        font-weight: bold;
         margin :0 2%;
+    }
+    & .submit-btn{
+        color:white;
+        background-color: $blue;
+        border: none;
+        border-radius:10px;
+        padding: 2% 4%;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 200ms;
+        &:hover{
+           opacity:0.6
+            
+        }
+
     }
 }
 
 
 main{
-    background-color: green;
     height: 60vh;
     display: flex;
     justify-content: stretch;
     @include box-setup;
     overflow: hidden;
+    & h3{
+        color: $blue;
+    }
 }
 
 aside{
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    width : 25%;
+    width :30%;
     & img{
-        width:80%;
+        width:140px;
         margin-top: 12%;
+        margin:12% 0 0 12%;
         clip-path: circle(50% at 50% 50%);
     }
+    
 }
 
 section {
     flex:2;
-    margin :4% 3%;
+    margin :4% 12% 4% 0%;
 
     & .namesDate-wrapper{
     display: flex;
