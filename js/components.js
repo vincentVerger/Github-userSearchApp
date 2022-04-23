@@ -41,7 +41,6 @@ class User{
 
         const newUser = new EchoApi('https://api.github.com/users/'+this._username);
         const userInfos = await newUser.getInfos();
-        console.log(userInfos);
 
 
         // affiche "no result" si le compte n'existe pas
@@ -50,8 +49,10 @@ class User{
         }
         else{
 
+        sessionStorage.setItem('profil',this._username);
         // affiche la photo de profil
         var userPictureUrl = userInfos.avatar_url;  
+        document.querySelector(".no-result").innerText = "";
         document.querySelector(".picture img").setAttribute('src',userPictureUrl);
 
         // affiche le login
@@ -122,8 +123,8 @@ class User{
 
         userTwitter.printInfoInDom('.twitter-link');
 
-        if (userTwitter._info===null){
-            document.querySelector('.company').setAttribute('href',"");
+        if (userTwitter._info===null || userTwitter._info===""){
+            document.querySelector('.twitter').setAttribute('href',"");
         }
         else{
         document.querySelector('.twitter').setAttribute("href",'https://twitter.com/'+userTwitter._info);
@@ -133,9 +134,10 @@ class User{
         //affiche la company avec @devant et link 
         const userCompany = new info(userInfos.company);
         
-        
+        userCompany.printInfoInDom('.company-link'); 
+
         if (userCompany._info===null){
-            userCompany.printInfoInDom('.company-link'); 
+           
             document.querySelector('.company').setAttribute('href',"");
         }
         

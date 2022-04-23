@@ -1,42 +1,62 @@
 @import  'reset','mixins'; 
 
+$time : 400ms;
+
 
 body{
-    width: 50%;
+    width: 65%;
     margin: auto;
-    padding: 5% 0;
-    color: var(--grey_lightmode);
-    transition: 1s;
-    background-color:var(--veryLightGrey_lightmode); 
+    padding: 2% 0;
+    @include tablet{
+        width : 80%;
+        padding: 5% 0;     
+    }
+    @include mobile{
+        width: 85%;
+        padding: 5% 0; 
+        font-size: 0.7em;
+    }
+    color: var(--grey_lightmode); 
+    transition: $time;
+    background-color:var(--veryLightGrey_lightmode);  
 }
 
 
 header{
-    //fill: var(--veryLightGrey_lightmode);
     display: flex;
     color : var(--darkGrey_lightmode);
     justify-content: space-between;
-    transition: 1s;
+    transition: $time;
+   
+   
+
     & .mode{
         display: flex;
         align-items: center;
         text-transform: uppercase;
-        color : var(--darkGrey_lightmode);
+        color : var(--grey_lightmode);
         letter-spacing: 0.3em;
         font-size: 0.8em;
         cursor: pointer;
-    }
 
-    & .moon-sun{
-        width: 20px;
-        height: 20px;
-        background-color: var(--darkGrey_lightmode);
-    }
-    & .moon{
-        mask: url('/assets/icon-moon.svg');
-    }
-    & .sun{
-            mask: url('/assets/icon-sun.svg');   
+        & div{
+            padding-right: 10px;
+            color : var(--grey_lightmode);
+        }
+    
+        & .moon-sun{
+            width: 20px;
+            height: 20px;
+            background-color: var(--grey_lightmode);
+        }
+            & .moon{
+                mask: url('/assets/icon-moon.svg');
+            }
+            & .sun{
+                mask: url('/assets/icon-sun.svg');   
+            }
+        
+        
     }
     
 }
@@ -45,10 +65,21 @@ header{
     display: flex;
     justify-content: stretch;
     align-items: center;
-    padding: 1% 1%; 
+    height: 90px;
+    padding: 1% 2%; 
     margin: 3% 0;
     
     @include box-setup;
+
+    @include tablet{
+        height: 70px;
+        margin-top: 10%;
+    }
+
+    @include mobile{
+        height: 50px;
+        margin-top: 10%;
+    }
 
     & label {
         margin: 0 3%;
@@ -62,14 +93,26 @@ header{
         border:none;
         outline:none;
         background-color:var(--white_lightmode) ;
-        caret-color:  $blue ;
-    
+        color:var(--darkGrey_lightmode);
+        caret-color:  $blue  ;
+        font-size: large;
+        @include mobile{
+            width:70%;
+            font-size: 1em;  
+        }
+        &::placeholder{
+            color:var(--greyBlue_lightmode);
+        }
     }
     & .no-result{
         width:14%;
         color: red;
         font-weight: bold;
         margin :0 2%;
+        @include mobile{
+            width:min-content;
+            white-space:nowrap;
+        }
     }
     & .submit-btn{
         color:white;
@@ -77,12 +120,17 @@ header{
         border: none;
         border-radius:10px;
         padding: 2% 4%;
-        font-weight: bold;
         cursor: pointer;
-        transition: 200ms;
+        transition: $time;
         &:hover{
            opacity:0.6
             
+        }
+        @include tablet {
+            height: 90%;
+        }
+        @include mobile {
+            height: 90%;
         }
 
     }
@@ -90,58 +138,137 @@ header{
 
 
 main{
-    height: 60vh;
     display: flex;
     justify-content: stretch;
+    position: relative;
     @include box-setup;
     overflow: hidden;
+    background-color: var(--white_lightmode);
+    padding: 3% 0 3% 0;
+ 
+    & h2{
+        color : var(--darkGrey_lightmode);
+    }
     & h3{
         color: $blue;
+        font-weight: 100;
     }
+   
 }
 
 aside{
     display: flex;
+    left: 0;
     align-items: flex-start;
     justify-content: center;
     width :30%;
+    @include tablet{
+       position: absolute;
+       margin-left: 10px;
+    }
+    @include mobile{
+        position: absolute;
+       margin-left: 10px;
+    }
+  
+    
     & img{
         width:140px;
-        margin-top: 12%;
+        @include mobile{
+        width :80px;
+        }
         margin:12% 0 0 12%;
         clip-path: circle(50% at 50% 50%);
+    
+      
     }
     
 }
 
 section {
     flex:2;
-    margin :4% 12% 4% 0%;
+    margin :5% 8% 4% 0%;
+    @include tablet{
+        margin: 5% 8% 7% 8% ;
+    }
+    @include mobile{
+        margin: 5% 8% 7% 8% ;
+    }
 
     & .namesDate-wrapper{
-    display: flex;
+    display: flex; 
     justify-content: space-between;
+
+        @include tablet{
+        flex-direction: column;
+        margin-left: 180px; 
+        margin-top: 2%;
+            & .date{
+                margin-top: 0.4em;
+            }
+        }
+        @include mobile{
+        flex-direction: column;
+        margin-left: 120px; 
+        margin-top: 2%;
+            & .date{
+                margin-top: 0.4em;
+            }
+        }
     }
+
 
     & .bio{
         margin: 3% 0;
         height: 17%;
         overflow: scroll;
+        color : var(--greyBlue_lightmode);
+        @include tablet{
+            margin-top: 10%;
+            }
     }
 
     & .stats{
         display: flex;
         justify-content: space-between;
         padding: 3% 10%;
-        background-color: $veryLightGrey_lightmode;
+        background-color: var(--veryLightGrey_lightmode);
+        transition: $time;
         border-radius: 10px;
+        font-size: 1.1em;
+        }
+
+    &  h4{
+            font-weight: 100;
+            font-size: 0.9em;
+
+        }
+    & .value{
+        color:var(--darkGrey_lightmode);
+        font-weight: bold;
+        font-size: 1.2em;
+      
     }
 
     & .links{
         margin-top: 3%;
         display: flex;
         justify-content: flex-start;
-        gap:25%;
+        color: var(--greyBlue_lightmode);
+        gap:28%;
+        @include tablet{
+            gap:2%;
+        }
+        @include mobile{
+            flex-direction: column;
+            margin-top: 10%;
+            margin-bottom: 13%;
+        }
+       
+
+        & span{
+            color: var(--greyBlue_lightmode);
+        }
 
     
         & .links-firstLine, .links-secondLine{
@@ -150,6 +277,15 @@ section {
             justify-content: space-around;
             width:30%;
             height: 100px;
+
+            @include mobile{
+            width:100%;
+            height: auto;
+            }
+           
+            @include tablet{
+                width: 50%;
+            }
         }
 
         & a, .location {
@@ -158,7 +294,20 @@ section {
             gap: 5%;
             text-decoration: none;
             color: $grey_lightmode;
+            @include mobile{
+            margin-top: 3%;
+            }
+        }
+        & .blog{
+            @include tablet{
+                overflow: scroll;
+            }
+            &:hover{   
+                text-decoration: underline;
+            }
+            
         }
 
     }
 }
+ 

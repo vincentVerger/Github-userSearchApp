@@ -1,3 +1,25 @@
+
+/* DEVICES */
+
+@mixin wide-screen {
+    @media screen and (min-width: 1025px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 481px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+
 /* RESET */
 
 * {
@@ -10,7 +32,8 @@
 html {
     
     height: 100vh;
-    font-size: 15px;
+    font-size: 1.1em;
+  
     
 }
 
@@ -33,25 +56,6 @@ $veryDarkBlue_darkmode :#141D2F;
 --grey_lightmode :#697C9A;
 --white_lightmode :#FEFEFE;
 --darkGrey_lightmode :#2B3442;
+--greyBlue_lightmode:#4B6A9B;
 }
 
-
-/* DEVICES */
-
-@mixin wide-screen {
-    @media screen and (min-width: 1600px) {
-        @content;
-    }
-}
-
-@mixin mobile {
-    @media screen and (max-width: 1200px) {
-        @content;
-    }
-}
-
-@mixin tablet {
-    @media screen and (min-width: 400px) and (max-width: 1200px) {
-        @content;
-    }
-}
