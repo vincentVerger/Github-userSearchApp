@@ -339,8 +339,6 @@ section .namesDate-wrapper {
 
 section .bio {
   margin: 3% 0;
-  height: 17%;
-  overflow: scroll;
   color: var(--greyBlue_lightmode);
 }
 
@@ -463,3 +461,4 @@ section .links a, section .links .location {
 section .links .blog:hover {
   text-decoration: underline;
 }
+/*# sourceMappingURL=main.css.map */
